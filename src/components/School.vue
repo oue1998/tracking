@@ -1,13 +1,15 @@
 <template>
   <div id="school">
-      <!-- <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a> -->
+      <div class="head"><span class="material-icons">power_settings_new</span></div>
       <div class="data">
         <h1>{{ msg }}</h1>
-        <img alt="percent" src="../assets/percent.png">
+        <div id="chart">
+        <apexchart type="radialBar" height="350" :options="chartOptions" :series="series"></apexchart>
+      </div>
         <h2>ปีการศึกษา : </h2>
-        <div class="number"><h3>นักเรียน : คน</h3> <h3>สำหรับ : วัน</h3></div>
-        <h3>เป็นงบประมาณ : บาท</h3>
-        <h3>งบฯที่ได้รับแล้ว : บาท</h3>
+        <div class="number"><h4>นักเรียน : คน</h4> <h4>สำหรับ : วัน</h4></div>
+        <h4>เป็นงบประมาณ : บาท</h4>
+        <h4>งบฯที่ได้รับแล้ว : บาท</h4>
       </div>
       <div class="menu">
         <button><router-link to="/project">บันทึกโครงการที่ขอไป</router-link></button>
@@ -24,7 +26,38 @@ export default {
   name: 'School',
   props: {
     msg: String
-  }
+  },
+  data() {
+    return{
+          series: [50],
+          chartOptions: {
+            chart: {
+              height: 350,
+              type: 'radialBar',
+            },
+            plotOptions: {
+              radialBar: {
+                hollow: {
+                  size: '70%',
+                },
+                dataLabels: {
+                  name: {
+                    show: false,
+                    color: '#fff'
+                  },
+                  value: {
+                    show: true,
+                    color: '#fff',
+                    fontSize: '30px'
+                  }
+                }
+              },
+              
+            },
+            labels: ['ccccc'],
+          },
+    }
+        },
 }
 </script>
 
@@ -33,24 +66,26 @@ export default {
 #school{
   background-color: #203E5F;
 }
+.material-icons{
+  font-size: 30px;
+}
+.head{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 h1{
-  font-size: 20px;
   margin: 30px;
 }
-h2{
-  font-size: 16px;
-  margin-top: 20px;
-}
-h3{
-  font-size: 16px;
-  font-weight: inherit;
+h2,h4{
+  margin: 20px 0px 10px 0px;
 }
 
 .data{
   color: white;
   padding: 10px;
 }
-.data .number h3{
+.data .number h4{
 display: inline;
 }
 

@@ -16,6 +16,7 @@
       </div>
       <div class="input">
         <h3>ปีการศึกษา</h3>
+        
         <input type="date" name="ว/ด/ป" placeholder="ว/ด/ป" value="2021-10-10"/>
         <input type="date" name="ว/ด/ป" placeholder="ว/ด/ป" value="2021-10-10"/>
         <div class="data"><h4>รวม 200 วัน</h4></div>
@@ -47,6 +48,9 @@ export default {
 </script>
 
 <style scope>
+#detail{
+  text-align: center;
+}
 .head {
   background-color: #203e5f;
   width: 100%;
@@ -57,39 +61,31 @@ export default {
   padding: 5px 0;
   text-align: center;
 }
-.head h1 {
-  font-size: 20px;
-}
 
 .title h2 {
-  font-size: 18px;
   margin: 30px 0px 25px 0px;
 }
 
 .section{
-    position: absolute;
+  position: absolute;
   left: 20px;
   text-align: left;
 }
 .section h3{
-    font-size: 16px;
     margin-bottom: 5px;
 }
-.section h4{
-    font-size: 16px;
-    font-weight: inherit;
-    margin: 0px;
-}
+
 .section .input{
     margin-bottom: 30px;
 }
 .section .data{
-    width: 350px;
+    width: 80%;
     background-color: #EDEAE4;
   padding: 15px;
+  margin: 0px;
 }
 .section input{
-    width: 350px;
+    width: 80%;
   padding: 15px;
   margin-bottom: 10px;
 }
